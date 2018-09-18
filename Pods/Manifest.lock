@@ -1,0 +1,36 @@
+PODS:
+  - MZAppearance (1.1.6)
+  - MZFormSheetPresentationController (2.4.3):
+    - MZAppearance
+  - ObjectMapper (3.3.0)
+  - SnapKit (4.0.0)
+  - SwiftWebSocket (2.7.0)
+  - SwiftyJSON (4.1.0)
+
+DEPENDENCIES:
+  - MZFormSheetPresentationController
+  - ObjectMapper
+  - SnapKit
+  - SwiftWebSocket
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MZAppearance
+    - MZFormSheetPresentationController
+    - ObjectMapper
+    - SnapKit
+    - SwiftWebSocket
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
+  MZFormSheetPresentationController: fbfdbad31884f16fac17fbe3c44c168306cc1095
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftWebSocket: 612c9729fd503cb6b0b8b45390c788686dac306f
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+
+PODFILE CHECKSUM: 7d3f68eaaef67a83af27453403923833cae70544
+
+COCOAPODS: 1.5.3

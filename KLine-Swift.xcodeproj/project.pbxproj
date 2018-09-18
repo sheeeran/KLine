@@ -1,0 +1,825 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D0D78A3CCA092CAD0D71324 /* Pods_KLine_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D514DC2941BD913BFC052CF8 /* Pods_KLine_Swift.framework */; };
+		52C5DD6B2146092100E7644D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DD6A2146092100E7644D /* AppDelegate.swift */; };
+		52C5DD6D2146092100E7644D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DD6C2146092100E7644D /* ViewController.swift */; };
+		52C5DD702146092100E7644D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C5DD6E2146092100E7644D /* Main.storyboard */; };
+		52C5DD722146092200E7644D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C5DD712146092200E7644D /* Assets.xcassets */; };
+		52C5DD752146092200E7644D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C5DD732146092200E7644D /* LaunchScreen.storyboard */; };
+		52C5DD802146092200E7644D /* KLine_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DD7F2146092200E7644D /* KLine_SwiftTests.swift */; };
+		52C5DDC021460C1200E7644D /* KLineResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDBE21460C1200E7644D /* KLineResponse.swift */; };
+		52C5DDC121460C1200E7644D /* KLineMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDBF21460C1200E7644D /* KLineMessageModel.swift */; };
+		52C5DDE32146147B00E7644D /* CustomStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDC32146147B00E7644D /* CustomStyleViewController.swift */; };
+		52C5DDE42146147B00E7644D /* StyleSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDC42146147B00E7644D /* StyleSettingViewController.swift */; };
+		52C5DDE52146147B00E7644D /* ChartDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDC52146147B00E7644D /* ChartDemoViewController.swift */; };
+		52C5DDE62146147B00E7644D /* DepthChartDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDC62146147B00E7644D /* DepthChartDemoViewController.swift */; };
+		52C5DDE72146147B00E7644D /* SettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDC72146147B00E7644D /* SettingListViewController.swift */; };
+		52C5DDE92146147B00E7644D /* KlineChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDCA2146147B00E7644D /* KlineChartData.swift */; };
+		52C5DDEA2146147B00E7644D /* SeriesParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDCB2146147B00E7644D /* SeriesParam.swift */; };
+		52C5DDEB2146147B00E7644D /* Double+exension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDCD2146147B00E7644D /* Double+exension.swift */; };
+		52C5DDEC2146147B00E7644D /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDCE2146147B00E7644D /* UIColor+extension.swift */; };
+		52C5DDED2146147B00E7644D /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDCF2146147B00E7644D /* Int+extension.swift */; };
+		52C5DDEE2146147B00E7644D /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDD02146147B00E7644D /* String+extension.swift */; };
+		52C5DDEF2146147B00E7644D /* NSDate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDD12146147B00E7644D /* NSDate+extension.swift */; };
+		52C5DDF02146147B00E7644D /* ChartStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDD32146147B00E7644D /* ChartStyles.swift */; };
+		52C5DDF22146147B00E7644D /* DemoSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDD52146147B00E7644D /* DemoSelectViewController.swift */; };
+		52C5DDF32146147B00E7644D /* SettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDD62146147B00E7644D /* SettingDetailViewController.swift */; };
+		52C5DDF52146147B00E7644D /* ChartCustomDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDD82146147B00E7644D /* ChartCustomDesignViewController.swift */; };
+		52C5DDF62146147B00E7644D /* SelectionPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDD92146147B00E7644D /* SelectionPopView.swift */; };
+		52C5DDF82146147B00E7644D /* KChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDDC2146147B00E7644D /* KChartCell.swift */; };
+		52C5DDF92146147B00E7644D /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDDD2146147B00E7644D /* SectionHeaderView.swift */; };
+		52C5DDFA2146147B00E7644D /* SeriesSettingDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDDE2146147B00E7644D /* SeriesSettingDetailCell.swift */; };
+		52C5DDFB2146147B00E7644D /* SeriesSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDDF2146147B00E7644D /* SeriesSettingCell.swift */; };
+		52C5DDFC2146147B00E7644D /* TickerTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDE02146147B00E7644D /* TickerTopView.swift */; };
+		52C5DDFD2146147B00E7644D /* ChartCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDE12146147B00E7644D /* ChartCustomViewController.swift */; };
+		52C5DDFE2146147B00E7644D /* ChartStyleSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DDE22146147B00E7644D /* ChartStyleSettingViewController.swift */; };
+		52DA58C82150AF0C00CDDA80 /* KLineRightIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C02150AF0C00CDDA80 /* KLineRightIndicatorView.swift */; };
+		52DA58C92150AF0C00CDDA80 /* KLineOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C12150AF0C00CDDA80 /* KLineOptionButton.swift */; };
+		52DA58CA2150AF0C00CDDA80 /* UIDevice+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C22150AF0C00CDDA80 /* UIDevice+Orientation.swift */; };
+		52DA58CB2150AF0C00CDDA80 /* KLineTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C32150AF0C00CDDA80 /* KLineTools.swift */; };
+		52DA58CC2150AF0C00CDDA80 /* OptionBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C42150AF0C00CDDA80 /* OptionBarCollectionViewCell.swift */; };
+		52DA58CD2150AF0C00CDDA80 /* KLinePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C52150AF0C00CDDA80 /* KLinePeriod.swift */; };
+		52DA58CE2150AF0C00CDDA80 /* KLineOptionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C62150AF0C00CDDA80 /* KLineOptionBar.swift */; };
+		52DA58D22150B5E600CDDA80 /* close_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52DA58CF2150B5E500CDDA80 /* close_btn@2x.png */; };
+		52DA58D32150B5E600CDDA80 /* favor_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52DA58D02150B5E600CDDA80 /* favor_nor@2x.png */; };
+		52DA58D42150B5E600CDDA80 /* favor_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52DA58D12150B5E600CDDA80 /* favor_sel@2x.png */; };
+		52E5235721461A9C004C1CB3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52E5234921461A9C004C1CB3 /* Info.plist */; };
+		52E5235821461A9C004C1CB3 /* CHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5234B21461A9C004C1CB3 /* CHExtension.swift */; };
+		52E5235921461A9C004C1CB3 /* CHAxisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5234C21461A9C004C1CB3 /* CHAxisModel.swift */; };
+		52E5235A21461A9C004C1CB3 /* CHSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5234D21461A9C004C1CB3 /* CHSeries.swift */; };
+		52E5235B21461A9C004C1CB3 /* CHKLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5234E21461A9C004C1CB3 /* CHKLineChart.swift */; };
+		52E5235C21461A9C004C1CB3 /* CHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5234F21461A9C004C1CB3 /* CHSection.swift */; };
+		52E5235D21461A9C004C1CB3 /* CHChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5235021461A9C004C1CB3 /* CHChartModel.swift */; };
+		52E5235E21461A9C004C1CB3 /* CHKLineChartStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5235121461A9C004C1CB3 /* CHKLineChartStyle.swift */; };
+		52E5235F21461A9C004C1CB3 /* CHDepthChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5235221461A9C004C1CB3 /* CHDepthChartView.swift */; };
+		52E5236021461A9C004C1CB3 /* CHChartImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5235321461A9C004C1CB3 /* CHChartImageGenerator.swift */; };
+		52E5236121461A9C004C1CB3 /* CHShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5235421461A9C004C1CB3 /* CHShapeLayer.swift */; };
+		52E5236221461A9C004C1CB3 /* CHDynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5235521461A9C004C1CB3 /* CHDynamicItem.swift */; };
+		52E5236321461A9C004C1CB3 /* CHChartAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5235621461A9C004C1CB3 /* CHChartAlgorithm.swift */; };
+		94418504214F401F0004EA54 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94418503214F401F0004EA54 /* Tools.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52C5DD7C2146092200E7644D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52C5DD5F2146092100E7644D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52C5DD662146092100E7644D;
+			remoteInfo = "KLine-Swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0680B6AEC7B395C944753E68 /* Pods-KLine-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLine-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KLine-Swift/Pods-KLine-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		52C5DD672146092100E7644D /* KLine-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KLine-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52C5DD6A2146092100E7644D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52C5DD6C2146092100E7644D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52C5DD6F2146092100E7644D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52C5DD712146092200E7644D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52C5DD742146092200E7644D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52C5DD762146092200E7644D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C5DD7B2146092200E7644D /* KLine-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KLine-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52C5DD7F2146092200E7644D /* KLine_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KLine_SwiftTests.swift; sourceTree = "<group>"; };
+		52C5DD812146092200E7644D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C5DDBA214609E300E7644D /* KLine-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KLine-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		52C5DDBE21460C1200E7644D /* KLineResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLineResponse.swift; sourceTree = "<group>"; };
+		52C5DDBF21460C1200E7644D /* KLineMessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLineMessageModel.swift; sourceTree = "<group>"; };
+		52C5DDC32146147B00E7644D /* CustomStyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStyleViewController.swift; sourceTree = "<group>"; };
+		52C5DDC42146147B00E7644D /* StyleSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSettingViewController.swift; sourceTree = "<group>"; };
+		52C5DDC52146147B00E7644D /* ChartDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartDemoViewController.swift; sourceTree = "<group>"; };
+		52C5DDC62146147B00E7644D /* DepthChartDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepthChartDemoViewController.swift; sourceTree = "<group>"; };
+		52C5DDC72146147B00E7644D /* SettingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingListViewController.swift; sourceTree = "<group>"; };
+		52C5DDCA2146147B00E7644D /* KlineChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KlineChartData.swift; sourceTree = "<group>"; };
+		52C5DDCB2146147B00E7644D /* SeriesParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesParam.swift; sourceTree = "<group>"; };
+		52C5DDCD2146147B00E7644D /* Double+exension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+exension.swift"; sourceTree = "<group>"; };
+		52C5DDCE2146147B00E7644D /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		52C5DDCF2146147B00E7644D /* Int+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+extension.swift"; sourceTree = "<group>"; };
+		52C5DDD02146147B00E7644D /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		52C5DDD12146147B00E7644D /* NSDate+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+extension.swift"; sourceTree = "<group>"; };
+		52C5DDD32146147B00E7644D /* ChartStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartStyles.swift; sourceTree = "<group>"; };
+		52C5DDD52146147B00E7644D /* DemoSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSelectViewController.swift; sourceTree = "<group>"; };
+		52C5DDD62146147B00E7644D /* SettingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDetailViewController.swift; sourceTree = "<group>"; };
+		52C5DDD82146147B00E7644D /* ChartCustomDesignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartCustomDesignViewController.swift; sourceTree = "<group>"; };
+		52C5DDD92146147B00E7644D /* SelectionPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionPopView.swift; sourceTree = "<group>"; };
+		52C5DDDC2146147B00E7644D /* KChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KChartCell.swift; sourceTree = "<group>"; };
+		52C5DDDD2146147B00E7644D /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		52C5DDDE2146147B00E7644D /* SeriesSettingDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesSettingDetailCell.swift; sourceTree = "<group>"; };
+		52C5DDDF2146147B00E7644D /* SeriesSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesSettingCell.swift; sourceTree = "<group>"; };
+		52C5DDE02146147B00E7644D /* TickerTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerTopView.swift; sourceTree = "<group>"; };
+		52C5DDE12146147B00E7644D /* ChartCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartCustomViewController.swift; sourceTree = "<group>"; };
+		52C5DDE22146147B00E7644D /* ChartStyleSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartStyleSettingViewController.swift; sourceTree = "<group>"; };
+		52DA58C02150AF0C00CDDA80 /* KLineRightIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLineRightIndicatorView.swift; sourceTree = "<group>"; };
+		52DA58C12150AF0C00CDDA80 /* KLineOptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLineOptionButton.swift; sourceTree = "<group>"; };
+		52DA58C22150AF0C00CDDA80 /* UIDevice+Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Orientation.swift"; sourceTree = "<group>"; };
+		52DA58C32150AF0C00CDDA80 /* KLineTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLineTools.swift; sourceTree = "<group>"; };
+		52DA58C42150AF0C00CDDA80 /* OptionBarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		52DA58C52150AF0C00CDDA80 /* KLinePeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLinePeriod.swift; sourceTree = "<group>"; };
+		52DA58C62150AF0C00CDDA80 /* KLineOptionBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLineOptionBar.swift; sourceTree = "<group>"; };
+		52DA58CF2150B5E500CDDA80 /* close_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_btn@2x.png"; sourceTree = "<group>"; };
+		52DA58D02150B5E600CDDA80 /* favor_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favor_nor@2x.png"; sourceTree = "<group>"; };
+		52DA58D12150B5E600CDDA80 /* favor_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favor_sel@2x.png"; sourceTree = "<group>"; };
+		52E5234821461A9C004C1CB3 /* CHKLineChartKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHKLineChartKit.h; sourceTree = "<group>"; };
+		52E5234921461A9C004C1CB3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52E5234B21461A9C004C1CB3 /* CHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHExtension.swift; sourceTree = "<group>"; };
+		52E5234C21461A9C004C1CB3 /* CHAxisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHAxisModel.swift; sourceTree = "<group>"; };
+		52E5234D21461A9C004C1CB3 /* CHSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHSeries.swift; sourceTree = "<group>"; };
+		52E5234E21461A9C004C1CB3 /* CHKLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHKLineChart.swift; sourceTree = "<group>"; };
+		52E5234F21461A9C004C1CB3 /* CHSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHSection.swift; sourceTree = "<group>"; };
+		52E5235021461A9C004C1CB3 /* CHChartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHChartModel.swift; sourceTree = "<group>"; };
+		52E5235121461A9C004C1CB3 /* CHKLineChartStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHKLineChartStyle.swift; sourceTree = "<group>"; };
+		52E5235221461A9C004C1CB3 /* CHDepthChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHDepthChartView.swift; sourceTree = "<group>"; };
+		52E5235321461A9C004C1CB3 /* CHChartImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHChartImageGenerator.swift; sourceTree = "<group>"; };
+		52E5235421461A9C004C1CB3 /* CHShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHShapeLayer.swift; sourceTree = "<group>"; };
+		52E5235521461A9C004C1CB3 /* CHDynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHDynamicItem.swift; sourceTree = "<group>"; };
+		52E5235621461A9C004C1CB3 /* CHChartAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHChartAlgorithm.swift; sourceTree = "<group>"; };
+		94418503214F401F0004EA54 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		A4EEB6D3FB7E789CA2556C5E /* Pods-KLine-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLine-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-KLine-Swift/Pods-KLine-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		D514DC2941BD913BFC052CF8 /* Pods_KLine_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KLine_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52C5DD642146092100E7644D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D0D78A3CCA092CAD0D71324 /* Pods_KLine_Swift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C5DD782146092200E7644D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44AC09AFECDF0A550790CB42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0680B6AEC7B395C944753E68 /* Pods-KLine-Swift.debug.xcconfig */,
+				A4EEB6D3FB7E789CA2556C5E /* Pods-KLine-Swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4EBFD733BEB1D87DD569FAD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D514DC2941BD913BFC052CF8 /* Pods_KLine_Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52C5DD5E2146092100E7644D = {
+			isa = PBXGroup;
+			children = (
+				52C5DD692146092100E7644D /* KLine-Swift */,
+				52C5DD7E2146092200E7644D /* KLine-SwiftTests */,
+				52C5DD682146092100E7644D /* Products */,
+				44AC09AFECDF0A550790CB42 /* Pods */,
+				4EBFD733BEB1D87DD569FAD8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52C5DD682146092100E7644D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52C5DD672146092100E7644D /* KLine-Swift.app */,
+				52C5DD7B2146092200E7644D /* KLine-SwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52C5DD692146092100E7644D /* KLine-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				52E5234721461A9C004C1CB3 /* CHKLineChartKit */,
+				52E5234A21461A9C004C1CB3 /* Classes */,
+				52C5DDC22146147B00E7644D /* Demo */,
+				52C5DD6A2146092100E7644D /* AppDelegate.swift */,
+				52C5DD6C2146092100E7644D /* ViewController.swift */,
+				52C5DDBF21460C1200E7644D /* KLineMessageModel.swift */,
+				52C5DDBE21460C1200E7644D /* KLineResponse.swift */,
+				94418503214F401F0004EA54 /* Tools.swift */,
+				52C5DD6E2146092100E7644D /* Main.storyboard */,
+				52C5DD712146092200E7644D /* Assets.xcassets */,
+				52C5DD732146092200E7644D /* LaunchScreen.storyboard */,
+				52C5DD762146092200E7644D /* Info.plist */,
+				52C5DDBA214609E300E7644D /* KLine-Swift-Bridging-Header.h */,
+			);
+			path = "KLine-Swift";
+			sourceTree = "<group>";
+		};
+		52C5DD7E2146092200E7644D /* KLine-SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				52C5DD7F2146092200E7644D /* KLine_SwiftTests.swift */,
+				52C5DD812146092200E7644D /* Info.plist */,
+			);
+			path = "KLine-SwiftTests";
+			sourceTree = "<group>";
+		};
+		52C5DDC22146147B00E7644D /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				52DA58BE2150AF0C00CDDA80 /* optionBar */,
+				52C5DDC32146147B00E7644D /* CustomStyleViewController.swift */,
+				52C5DDC42146147B00E7644D /* StyleSettingViewController.swift */,
+				52C5DDC52146147B00E7644D /* ChartDemoViewController.swift */,
+				52C5DDC62146147B00E7644D /* DepthChartDemoViewController.swift */,
+				52C5DDC72146147B00E7644D /* SettingListViewController.swift */,
+				52C5DDC82146147B00E7644D /* models */,
+				52C5DDCC2146147B00E7644D /* extensions */,
+				52C5DDD22146147B00E7644D /* styles */,
+				52C5DDD52146147B00E7644D /* DemoSelectViewController.swift */,
+				52C5DDD62146147B00E7644D /* SettingDetailViewController.swift */,
+				52C5DDD82146147B00E7644D /* ChartCustomDesignViewController.swift */,
+				52C5DDD92146147B00E7644D /* SelectionPopView.swift */,
+				52C5DDDB2146147B00E7644D /* views */,
+				52C5DDE12146147B00E7644D /* ChartCustomViewController.swift */,
+				52C5DDE22146147B00E7644D /* ChartStyleSettingViewController.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		52C5DDC82146147B00E7644D /* models */ = {
+			isa = PBXGroup;
+			children = (
+				52C5DDCA2146147B00E7644D /* KlineChartData.swift */,
+				52C5DDCB2146147B00E7644D /* SeriesParam.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		52C5DDCC2146147B00E7644D /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				52C5DDCD2146147B00E7644D /* Double+exension.swift */,
+				52C5DDCE2146147B00E7644D /* UIColor+extension.swift */,
+				52C5DDCF2146147B00E7644D /* Int+extension.swift */,
+				52C5DDD02146147B00E7644D /* String+extension.swift */,
+				52C5DDD12146147B00E7644D /* NSDate+extension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		52C5DDD22146147B00E7644D /* styles */ = {
+			isa = PBXGroup;
+			children = (
+				52C5DDD32146147B00E7644D /* ChartStyles.swift */,
+			);
+			path = styles;
+			sourceTree = "<group>";
+		};
+		52C5DDDB2146147B00E7644D /* views */ = {
+			isa = PBXGroup;
+			children = (
+				52C5DDDC2146147B00E7644D /* KChartCell.swift */,
+				52C5DDDD2146147B00E7644D /* SectionHeaderView.swift */,
+				52C5DDDE2146147B00E7644D /* SeriesSettingDetailCell.swift */,
+				52C5DDDF2146147B00E7644D /* SeriesSettingCell.swift */,
+				52C5DDE02146147B00E7644D /* TickerTopView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		52DA58BE2150AF0C00CDDA80 /* optionBar */ = {
+			isa = PBXGroup;
+			children = (
+				52DA58CF2150B5E500CDDA80 /* close_btn@2x.png */,
+				52DA58D02150B5E600CDDA80 /* favor_nor@2x.png */,
+				52DA58D12150B5E600CDDA80 /* favor_sel@2x.png */,
+				52DA58C02150AF0C00CDDA80 /* KLineRightIndicatorView.swift */,
+				52DA58C12150AF0C00CDDA80 /* KLineOptionButton.swift */,
+				52DA58C22150AF0C00CDDA80 /* UIDevice+Orientation.swift */,
+				52DA58C32150AF0C00CDDA80 /* KLineTools.swift */,
+				52DA58C42150AF0C00CDDA80 /* OptionBarCollectionViewCell.swift */,
+				52DA58C52150AF0C00CDDA80 /* KLinePeriod.swift */,
+				52DA58C62150AF0C00CDDA80 /* KLineOptionBar.swift */,
+			);
+			path = optionBar;
+			sourceTree = "<group>";
+		};
+		52E5234721461A9C004C1CB3 /* CHKLineChartKit */ = {
+			isa = PBXGroup;
+			children = (
+				52E5234821461A9C004C1CB3 /* CHKLineChartKit.h */,
+				52E5234921461A9C004C1CB3 /* Info.plist */,
+			);
+			path = CHKLineChartKit;
+			sourceTree = "<group>";
+		};
+		52E5234A21461A9C004C1CB3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				52E5234B21461A9C004C1CB3 /* CHExtension.swift */,
+				52E5234C21461A9C004C1CB3 /* CHAxisModel.swift */,
+				52E5234D21461A9C004C1CB3 /* CHSeries.swift */,
+				52E5234E21461A9C004C1CB3 /* CHKLineChart.swift */,
+				52E5234F21461A9C004C1CB3 /* CHSection.swift */,
+				52E5235021461A9C004C1CB3 /* CHChartModel.swift */,
+				52E5235121461A9C004C1CB3 /* CHKLineChartStyle.swift */,
+				52E5235221461A9C004C1CB3 /* CHDepthChartView.swift */,
+				52E5235321461A9C004C1CB3 /* CHChartImageGenerator.swift */,
+				52E5235421461A9C004C1CB3 /* CHShapeLayer.swift */,
+				52E5235521461A9C004C1CB3 /* CHDynamicItem.swift */,
+				52E5235621461A9C004C1CB3 /* CHChartAlgorithm.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52C5DD662146092100E7644D /* KLine-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52C5DD842146092200E7644D /* Build configuration list for PBXNativeTarget "KLine-Swift" */;
+			buildPhases = (
+				4CF2176A8D3383DE85515294 /* [CP] Check Pods Manifest.lock */,
+				52C5DD632146092100E7644D /* Sources */,
+				52C5DD642146092100E7644D /* Frameworks */,
+				52C5DD652146092100E7644D /* Resources */,
+				3B9C5842E9B4CD797ACF8E38 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KLine-Swift";
+			productName = "KLine-Swift";
+			productReference = 52C5DD672146092100E7644D /* KLine-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52C5DD7A2146092200E7644D /* KLine-SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52C5DD872146092200E7644D /* Build configuration list for PBXNativeTarget "KLine-SwiftTests" */;
+			buildPhases = (
+				52C5DD772146092200E7644D /* Sources */,
+				52C5DD782146092200E7644D /* Frameworks */,
+				52C5DD792146092200E7644D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52C5DD7D2146092200E7644D /* PBXTargetDependency */,
+			);
+			name = "KLine-SwiftTests";
+			productName = "KLine-SwiftTests";
+			productReference = 52C5DD7B2146092200E7644D /* KLine-SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52C5DD5F2146092100E7644D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = xieran;
+				TargetAttributes = {
+					52C5DD662146092100E7644D = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					52C5DD7A2146092200E7644D = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 52C5DD662146092100E7644D;
+					};
+				};
+			};
+			buildConfigurationList = 52C5DD622146092100E7644D /* Build configuration list for PBXProject "KLine-Swift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52C5DD5E2146092100E7644D;
+			productRefGroup = 52C5DD682146092100E7644D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52C5DD662146092100E7644D /* KLine-Swift */,
+				52C5DD7A2146092200E7644D /* KLine-SwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52C5DD652146092100E7644D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E5235721461A9C004C1CB3 /* Info.plist in Resources */,
+				52C5DD752146092200E7644D /* LaunchScreen.storyboard in Resources */,
+				52DA58D42150B5E600CDDA80 /* favor_sel@2x.png in Resources */,
+				52C5DD722146092200E7644D /* Assets.xcassets in Resources */,
+				52DA58D22150B5E600CDDA80 /* close_btn@2x.png in Resources */,
+				52C5DD702146092100E7644D /* Main.storyboard in Resources */,
+				52DA58D32150B5E600CDDA80 /* favor_nor@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C5DD792146092200E7644D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B9C5842E9B4CD797ACF8E38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KLine-Swift/Pods-KLine-Swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MZAppearance/MZAppearance.framework",
+				"${BUILT_PRODUCTS_DIR}/MZFormSheetPresentationController/MZFormSheetPresentationController.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftWebSocket/SwiftWebSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZAppearance.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZFormSheetPresentationController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KLine-Swift/Pods-KLine-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CF2176A8D3383DE85515294 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KLine-Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52C5DD632146092100E7644D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52E5236121461A9C004C1CB3 /* CHShapeLayer.swift in Sources */,
+				52C5DDFE2146147B00E7644D /* ChartStyleSettingViewController.swift in Sources */,
+				52C5DDFC2146147B00E7644D /* TickerTopView.swift in Sources */,
+				52C5DDFA2146147B00E7644D /* SeriesSettingDetailCell.swift in Sources */,
+				52C5DDEE2146147B00E7644D /* String+extension.swift in Sources */,
+				52DA58CA2150AF0C00CDDA80 /* UIDevice+Orientation.swift in Sources */,
+				52E5236321461A9C004C1CB3 /* CHChartAlgorithm.swift in Sources */,
+				52DA58CC2150AF0C00CDDA80 /* OptionBarCollectionViewCell.swift in Sources */,
+				52C5DDF62146147B00E7644D /* SelectionPopView.swift in Sources */,
+				52DA58C82150AF0C00CDDA80 /* KLineRightIndicatorView.swift in Sources */,
+				52DA58CE2150AF0C00CDDA80 /* KLineOptionBar.swift in Sources */,
+				52E5235921461A9C004C1CB3 /* CHAxisModel.swift in Sources */,
+				52C5DDF22146147B00E7644D /* DemoSelectViewController.swift in Sources */,
+				52C5DDEB2146147B00E7644D /* Double+exension.swift in Sources */,
+				52C5DDF92146147B00E7644D /* SectionHeaderView.swift in Sources */,
+				52C5DDEA2146147B00E7644D /* SeriesParam.swift in Sources */,
+				52DA58C92150AF0C00CDDA80 /* KLineOptionButton.swift in Sources */,
+				52C5DDED2146147B00E7644D /* Int+extension.swift in Sources */,
+				52DA58CD2150AF0C00CDDA80 /* KLinePeriod.swift in Sources */,
+				52E5236021461A9C004C1CB3 /* CHChartImageGenerator.swift in Sources */,
+				52C5DDF52146147B00E7644D /* ChartCustomDesignViewController.swift in Sources */,
+				52C5DDE62146147B00E7644D /* DepthChartDemoViewController.swift in Sources */,
+				52C5DDEC2146147B00E7644D /* UIColor+extension.swift in Sources */,
+				52C5DDF02146147B00E7644D /* ChartStyles.swift in Sources */,
+				52E5235B21461A9C004C1CB3 /* CHKLineChart.swift in Sources */,
+				52E5236221461A9C004C1CB3 /* CHDynamicItem.swift in Sources */,
+				52E5235E21461A9C004C1CB3 /* CHKLineChartStyle.swift in Sources */,
+				52E5235C21461A9C004C1CB3 /* CHSection.swift in Sources */,
+				52C5DDE72146147B00E7644D /* SettingListViewController.swift in Sources */,
+				52C5DDF32146147B00E7644D /* SettingDetailViewController.swift in Sources */,
+				52C5DDF82146147B00E7644D /* KChartCell.swift in Sources */,
+				52E5235821461A9C004C1CB3 /* CHExtension.swift in Sources */,
+				52C5DD6D2146092100E7644D /* ViewController.swift in Sources */,
+				52C5DDFD2146147B00E7644D /* ChartCustomViewController.swift in Sources */,
+				52C5DDC021460C1200E7644D /* KLineResponse.swift in Sources */,
+				52C5DDEF2146147B00E7644D /* NSDate+extension.swift in Sources */,
+				52C5DDE42146147B00E7644D /* StyleSettingViewController.swift in Sources */,
+				52DA58CB2150AF0C00CDDA80 /* KLineTools.swift in Sources */,
+				52E5235F21461A9C004C1CB3 /* CHDepthChartView.swift in Sources */,
+				52C5DDC121460C1200E7644D /* KLineMessageModel.swift in Sources */,
+				52C5DDE92146147B00E7644D /* KlineChartData.swift in Sources */,
+				52E5235D21461A9C004C1CB3 /* CHChartModel.swift in Sources */,
+				52C5DDFB2146147B00E7644D /* SeriesSettingCell.swift in Sources */,
+				52C5DD6B2146092100E7644D /* AppDelegate.swift in Sources */,
+				52C5DDE32146147B00E7644D /* CustomStyleViewController.swift in Sources */,
+				94418504214F401F0004EA54 /* Tools.swift in Sources */,
+				52E5235A21461A9C004C1CB3 /* CHSeries.swift in Sources */,
+				52C5DDE52146147B00E7644D /* ChartDemoViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C5DD772146092200E7644D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C5DD802146092200E7644D /* KLine_SwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52C5DD7D2146092200E7644D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52C5DD662146092100E7644D /* KLine-Swift */;
+			targetProxy = 52C5DD7C2146092200E7644D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52C5DD6E2146092100E7644D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52C5DD6F2146092100E7644D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52C5DD732146092200E7644D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52C5DD742146092200E7644D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52C5DD822146092200E7644D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52C5DD832146092200E7644D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52C5DD852146092200E7644D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0680B6AEC7B395C944753E68 /* Pods-KLine-Swift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KLine-Swift",
+				);
+				INFOPLIST_FILE = "KLine-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cn.kline.KLine-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KLine-Swift/KLine-Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52C5DD862146092200E7644D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4EEB6D3FB7E789CA2556C5E /* Pods-KLine-Swift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KLine-Swift",
+				);
+				INFOPLIST_FILE = "KLine-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cn.kline.KLine-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KLine-Swift/KLine-Swift-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52C5DD882146092200E7644D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "KLine-SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cn.kline.KLine-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KLine-Swift.app/KLine-Swift";
+			};
+			name = Debug;
+		};
+		52C5DD892146092200E7644D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "KLine-SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cn.kline.KLine-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KLine-Swift.app/KLine-Swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52C5DD622146092100E7644D /* Build configuration list for PBXProject "KLine-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C5DD822146092200E7644D /* Debug */,
+				52C5DD832146092200E7644D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52C5DD842146092200E7644D /* Build configuration list for PBXNativeTarget "KLine-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C5DD852146092200E7644D /* Debug */,
+				52C5DD862146092200E7644D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52C5DD872146092200E7644D /* Build configuration list for PBXNativeTarget "KLine-SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C5DD882146092200E7644D /* Debug */,
+				52C5DD892146092200E7644D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52C5DD5F2146092100E7644D /* Project object */;
+}
