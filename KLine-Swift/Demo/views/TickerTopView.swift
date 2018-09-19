@@ -175,11 +175,10 @@ class TickerTopView: UIView {
         if UIDevice.isPortrait {
             labelPrice.font = UIFont.systemFont(ofSize: 26)
             labelRise.font = UIFont.systemFont(ofSize: 12)
-            
-            marketLabel.snp.removeConstraints()
-//            marketLabel.snp.remakeConstraints { (make) in
-//                make.width.equalTo(0)
-//            }
+
+            marketLabel.snp.remakeConstraints { (make) in
+                make.width.height.equalTo(0)
+            }
             
             labelHigh.snp.remakeConstraints { (make) in
                 make.right.equalToSuperview().offset(-10)
@@ -224,9 +223,8 @@ class TickerTopView: UIView {
         } else {
             labelPrice.font = UIFont.systemFont(ofSize: 20)
             labelRise.font = UIFont.systemFont(ofSize: 20)
-
             
-            marketLabel.snp.makeConstraints { (make) in
+            marketLabel.snp.remakeConstraints { (make) in
                 make.centerY.equalToSuperview()
                 make.left.equalToSuperview().offset(15)
             }

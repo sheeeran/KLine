@@ -9,40 +9,29 @@
 import UIKit
 
 class KLineRightIndicatorView: UIView {
-
-    let indicatorBtns = [KLineRightIndicatorButton(title: "MA", value: "MA"),
-                         KLineRightIndicatorButton(title: "BOLL", value: "BOLL")]
-    let volumeBtns = [KLineRightIndicatorButton(title: "成交量", value: "Volume"),
-                      KLineRightIndicatorButton(title: "MACD", value: "MACD"),
-                      KLineRightIndicatorButton(title: "KDJ", value: "BOLL"),
-                      KLineRightIndicatorButton(title: "RSI", value: "RSI")]
     
-    var masterIndex: Int = 0 {
+    let masterIndicators = [PromptButton(title: "MA"),
+                         ]
+    let assistantIndicators = [IndicatorButton(title: "成交量", value: "Volume", hideLine: true),
+                      IndicatorButton(title: "MACD", value: "MACD", hideLine: true),
+                      IndicatorButton(title: "KDJ", value: "KDJ", hideLine: true),
+                      IndicatorButton(title: "RSI", value: "RSI", hideLine: true),
+                      IndicatorButton(title: "BOLL", value: "BOLL", hideLine: true)]
+    
+    var selectedIndex: Int = 0 {
         didSet {
-            for (index, btn) in indicatorBtns.enumerated() {
-                btn.isSelected = masterIndex == index
+            for (index, btn) in assistantIndicators.enumerated() {
+                btn.isSelected = selectedIndex == index
             }
         }
     }
-    
-    var assitantIndex: Int = 0 {
-        didSet {
-            for (index, btn) in volumeBtns.enumerated() {
-                btn.isSelected = assitantIndex == index
-            }
-        }
-    }
-    
-    var selectIndicator1Block: ((_ index: Int) -> Void)?
-    var selectIndicator2Block: ((_ index: Int) -> Void)?
-    
+        
     let btnHeight: CGFloat = 40.0
-
+    
     init() {
-        super.init(frame: .zero)        
-        for (index, btn) in (indicatorBtns + volumeBtns).enumerated() {
-            btn.tag = index
-            btn.addTarget(self, action: #selector(selectIndex(sender:)), for: .touchUpInside)
+        super.init(frame: .zero)
+        let btns = (masterIndicators as [KLineOptionButton]) + (assistantIndicators as [KLineOptionButton])
+        for (index, btn) in btns.enumerated() {
             addSubview(btn)
             btn.snp.makeConstraints({ (make) in
                 make.centerX.width.equalToSuperview()
@@ -57,38 +46,27 @@ class KLineRightIndicatorView: UIView {
         line.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(-6)
-            make.top.equalTo((indicatorBtns.last?.snp.bottom)!)
+            make.top.equalTo((masterIndicators.last?.snp.bottom)!)
             make.height.equalTo(1)
         }
-        
         
         backgroundColor = .clear
         layer.borderWidth = 1.0
         layer.borderColor = UIColor(white: 1, alpha: 0.3).cgColor
 
-        DispatchQueue.main.async {
-            self.masterIndex = 0
-            self.assitantIndex = 0
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(optionButtonClick(notice:)), name: Notification.Name.init("OptionButtonClick"), object: nil)
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func selectIndex(sender: KLineRightIndicatorButton) {
-        if indicatorBtns.contains(sender) {
-            for btn in indicatorBtns {
-                btn.isSelected = btn == sender
+    @objc func optionButtonClick(notice: Notification) {
+        if let btn = notice.object as? IndicatorButton {
+            assistantIndicators.forEach { (button) in
+                button.isSelected = btn.value == button.value
             }
-            selectIndicator1Block?(sender.tag)
-        }
-        
-        if volumeBtns.contains(sender) {
-            for btn in volumeBtns {
-                btn.isSelected = btn == sender
-            }
-            selectIndicator2Block?(sender.tag - indicatorBtns.count)
         }
     }
 }

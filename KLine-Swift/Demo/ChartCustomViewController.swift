@@ -25,9 +25,9 @@ class ChartCustomViewController: UIViewController {
         CHSeriesKey.candle, CHSeriesKey.timeline
     ]
     /// 主图指标
-    let masterIndex: [String] = [CHSeriesKey.ma, CHSeriesKey.boll]
+    let masterIndex: [String] = [CHSeriesKey.ma]
     /// 副图指标
-    let assistIndex: [String] = [CHSeriesKey.volume, CHSeriesKey.macd, CHSeriesKey.kdj, CHSeriesKey.rsi]
+    let assistIndex: [String] = [CHSeriesKey.volume, CHSeriesKey.macd, CHSeriesKey.kdj, CHSeriesKey.rsi, CHSeriesKey.boll]
     //选择交易对
     let exPairs: [String] = [
         "BTC-USD", "ETH-USD", "LTC-USD",
@@ -38,17 +38,9 @@ class ChartCustomViewController: UIViewController {
     /// 已选主图线段
     var selectedMasterLine: Int = 0
     /// 已选主图指标
-    var selectedMasterIndex: Int = 0 {
-        didSet {
-            self.handleChartIndexChanged()
-        }
-    }
+    var selectedMasterIndex: Int = 0
     /// 已选副图指标1
-    var selectedAssistIndex: Int = 0 {
-        didSet {
-            self.handleChartIndexChanged()
-        }
-    }
+    var selectedAssistIndex: Int = 0
     /// 已选副图指标2
     var selectedAssistIndex2: Int = 0
     /// 选择的风格
@@ -90,36 +82,35 @@ class ChartCustomViewController: UIViewController {
         return btn
     }()
     
-    lazy var optionBar: KLineOptionBar = {
-        let v = KLineOptionBar()
+    lazy var optionBar: KLineOptionBarPortrait = {
+        let v = KLineOptionBarPortrait()
+        v.optionDelegate = self
         view.addSubview(v)
-        v.selectPeriodBlock = {[unowned self] (index) in
-            //period
-            self.period = KLineTools.times[index]
-            self.sendData()
+        v.snp.makeConstraints { (make) in
+            make.height.equalTo(v.viewHeight)
+            make.left.right.centerY.equalToSuperview()
         }
-        v.selectIndicator1Block = {[weak self] (index) in
-            self?.rightIndicator.masterIndex = index
-            self?.selectedMasterIndex = index
-        }
-        v.selectIndicator2Block = {[weak self] (index) in
-            self?.rightIndicator.assitantIndex = index
-            self?.selectedAssistIndex = index
-        }
+        return v
+    }()
+    lazy var optionBarLandscape: KLineOptionBarLandscape = {
+        let v = KLineOptionBarLandscape()
+        v.optionDelegate = self
+        view.addSubview(v)
+        v.snp.makeConstraints({ (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(v.viewHeight)
+        })
         return v
     }()
     lazy var rightIndicator: KLineRightIndicatorView = {
         let v = KLineRightIndicatorView()
         v.isHidden = UIDevice.isPortrait
         view.addSubview(v)
-
-        v.selectIndicator1Block = {[weak self] (index) in
-            self?.optionBar.masterIndex = index
-            self?.selectedMasterIndex = index
-        }
-        v.selectIndicator2Block = {[weak self] (index) in
-            self?.optionBar.assitantIndex = index
-            self?.selectedAssistIndex = index
+        v.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-5)
+            make.width.equalTo(60)
+            make.top.equalToSuperview().offset(KLineTools.landscapeNavBarHeight + 10)
+            make.bottom.equalToSuperview().offset(-2 * KLineTools.landscapeOptionBarHeight)
         }
         return v
     }()
@@ -186,7 +177,7 @@ class ChartCustomViewController: UIViewController {
     
     let socket = WebSocket("wss://ars-wss.duelb.com/klineList")
     var pingTimer: Timer?
-    var period = KLineTools.times[0]
+    var period = KLinePeriod(type: .min15).value
     var modelsDict = [AnyHashable: Any]()
     var marketType = "" {
         didSet {
@@ -300,18 +291,48 @@ extension ChartCustomViewController: WebSocketDelegate {
 //横竖屏切换
 extension ChartCustomViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        optionBar.rotate(screenWidth: size.width)
         topView.setupLabels()
         makeConstraints()
-
+        
+        optionBar.rotate()
+        optionBarLandscape.rotate()
         if size.width > size.height { //横屏
-            rightIndicator.isHidden = false
             closeBtn.isHidden = false
+            rightIndicator.isHidden = false
+            optionBar.isHidden = true
+            optionBarLandscape.isHidden = false
+            optionBarLandscape.updateConstraints()
             self.navigationController?.setNavigationBarHidden(true, animated: true)
         } else { //竖屏
-            rightIndicator.isHidden = true
             closeBtn.isHidden = true
+            rightIndicator.isHidden = true
+            optionBar.isHidden = false
+            optionBarLandscape.isHidden = true
             self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
+    }
+}
+
+extension ChartCustomViewController: KLineOptionDelegate {
+    func selectTimeLine() {
+        self.selectedMasterLine = 1
+        self.handleChartIndexChanged()
+    }
+    
+    func selectPeriod(_ period: String) {
+        self.selectedMasterLine = 0
+        self.period = period
+        self.sendData()
+        self.handleChartIndexChanged()
+    }
+    
+    func selectAssitIndicator(_ indicator: String) {
+        for (index, value) in self.assistIndex.enumerated() {
+            if value == indicator {
+                self.selectedAssistIndex = index
+                self.handleChartIndexChanged()
+                break
+            }
         }
     }
 }
@@ -395,7 +416,7 @@ extension ChartCustomViewController {
             }
         }
         
-        closeBtn.snp.makeConstraints { (make) in
+        closeBtn.snp.remakeConstraints { (make) in
             make.right.equalToSuperview().offset(-10)
             make.centerY.equalToSuperview()
             make.width.height.equalTo(25)
@@ -405,7 +426,7 @@ extension ChartCustomViewController {
     ///处理指标的变更
     func handleChartIndexChanged() {
         
-//        let lineKey = self.masterLine[self.selectedMasterLine]
+        let lineKey = self.masterLine[self.selectedMasterLine]
         let masterKey = self.masterIndex[self.selectedMasterIndex]
         let assistKey = self.assistIndex[self.selectedAssistIndex]
 //        let assist2Key = self.assistIndex[self.selectedAssistIndex2]
@@ -422,7 +443,7 @@ extension ChartCustomViewController {
         self.chartView.setSerie(hidden: false, by: masterKey, inSection: 0)
         self.chartView.setSerie(hidden: false, by: assistKey, inSection: 1)
 //        self.chartView.setSerie(hidden: false, by: assist2Key, inSection: 2)
-//        self.chartView.setSerie(hidden: false, by: lineKey, inSection: 0)
+        self.chartView.setSerie(hidden: false, by: lineKey, inSection: 0)
         
         //重新渲染
         self.chartView.reloadData(resetData: false)

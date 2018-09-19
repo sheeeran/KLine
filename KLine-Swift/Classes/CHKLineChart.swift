@@ -1648,40 +1648,40 @@ extension CHKLineChartView: UIGestureRecognizerDelegate {
             }
             
         case .ended, .cancelled:
-            
-            //重置减速开始
-            self.decelerationStartX = 0
-            //添加减速行为
-            self.dynamicItem.center = self.bounds.origin
-            let decelerationBehavior = UIDynamicItemBehavior(items: [self.dynamicItem])
-            decelerationBehavior.addLinearVelocity(velocity, for: self.dynamicItem)
-            decelerationBehavior.resistance = 2.0
-            decelerationBehavior.action = {
-                [weak self]() -> Void in
-                //print("self.dynamicItem.x = \(self?.dynamicItem.center.x ?? 0)")
-                
-                //到边界不执行移动
-                if self?.rangeFrom == 0 || self?.rangeTo == self?.plotCount{
-                    return
-                }
-                
-                let itemX = self?.dynamicItem.center.x ?? 0
-                let startX = self?.decelerationStartX ?? 0
-                //计算移动距离的绝对值，距离满足超过线条宽度就进行图表平移刷新
-                let distance = fabs(itemX - startX)
-                //            print("distance = \(distance)")
-                if distance > plotWidth {
-                    let isRight = itemX > 0 ? true : false
-                    let interval = lroundf(fabs(Float(distance / plotWidth)))
-                    self?.moveChart(by: interval, direction: isRight)
-                    //重新计算起始位
-                    self?.decelerationStartX = itemX
-                }
-            }
-            
-            //添加动力行为
-            self.animator.addBehavior(decelerationBehavior)
-            self.decelerationBehavior = decelerationBehavior
+            break
+//            //重置减速开始
+//            self.decelerationStartX = 0
+//            //添加减速行为
+//            self.dynamicItem.center = self.bounds.origin
+//            let decelerationBehavior = UIDynamicItemBehavior(items: [self.dynamicItem])
+//            decelerationBehavior.addLinearVelocity(velocity, for: self.dynamicItem)
+//            decelerationBehavior.resistance = 2.0
+//            decelerationBehavior.action = {
+//                [weak self]() -> Void in
+//                //print("self.dynamicItem.x = \(self?.dynamicItem.center.x ?? 0)")
+//
+//                //到边界不执行移动
+//                if self?.rangeFrom == 0 || self?.rangeTo == self?.plotCount{
+//                    return
+//                }
+//
+//                let itemX = self?.dynamicItem.center.x ?? 0
+//                let startX = self?.decelerationStartX ?? 0
+//                //计算移动距离的绝对值，距离满足超过线条宽度就进行图表平移刷新
+//                let distance = fabs(itemX - startX)
+//                //            print("distance = \(distance)")
+//                if distance > plotWidth {
+//                    let isRight = itemX > 0 ? true : false
+//                    let interval = lroundf(fabs(Float(distance / plotWidth)))
+//                    self?.moveChart(by: interval, direction: isRight)
+//                    //重新计算起始位
+//                    self?.decelerationStartX = itemX
+//                }
+//            }
+//
+//            //添加动力行为
+//            self.animator.addBehavior(decelerationBehavior)
+//            self.decelerationBehavior = decelerationBehavior
 
             
         default:

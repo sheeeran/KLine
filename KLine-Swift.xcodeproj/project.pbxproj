@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D0D78A3CCA092CAD0D71324 /* Pods_KLine_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D514DC2941BD913BFC052CF8 /* Pods_KLine_Swift.framework */; };
+		5281A0F1215271D500D972F4 /* KLineOptionBarLandscape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281A0EF215271D500D972F4 /* KLineOptionBarLandscape.swift */; };
+		5281A0F2215271D500D972F4 /* KLineOptionBarPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5281A0F0215271D500D972F4 /* KLineOptionBarPortrait.swift */; };
 		52C5DD6B2146092100E7644D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DD6A2146092100E7644D /* AppDelegate.swift */; };
 		52C5DD6D2146092100E7644D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5DD6C2146092100E7644D /* ViewController.swift */; };
 		52C5DD702146092100E7644D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C5DD6E2146092100E7644D /* Main.storyboard */; };
@@ -44,9 +46,7 @@
 		52DA58C92150AF0C00CDDA80 /* KLineOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C12150AF0C00CDDA80 /* KLineOptionButton.swift */; };
 		52DA58CA2150AF0C00CDDA80 /* UIDevice+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C22150AF0C00CDDA80 /* UIDevice+Orientation.swift */; };
 		52DA58CB2150AF0C00CDDA80 /* KLineTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C32150AF0C00CDDA80 /* KLineTools.swift */; };
-		52DA58CC2150AF0C00CDDA80 /* OptionBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C42150AF0C00CDDA80 /* OptionBarCollectionViewCell.swift */; };
 		52DA58CD2150AF0C00CDDA80 /* KLinePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C52150AF0C00CDDA80 /* KLinePeriod.swift */; };
-		52DA58CE2150AF0C00CDDA80 /* KLineOptionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA58C62150AF0C00CDDA80 /* KLineOptionBar.swift */; };
 		52DA58D22150B5E600CDDA80 /* close_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52DA58CF2150B5E500CDDA80 /* close_btn@2x.png */; };
 		52DA58D32150B5E600CDDA80 /* favor_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52DA58D02150B5E600CDDA80 /* favor_nor@2x.png */; };
 		52DA58D42150B5E600CDDA80 /* favor_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52DA58D12150B5E600CDDA80 /* favor_sel@2x.png */; };
@@ -78,6 +78,8 @@
 
 /* Begin PBXFileReference section */
 		0680B6AEC7B395C944753E68 /* Pods-KLine-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLine-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KLine-Swift/Pods-KLine-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		5281A0EF215271D500D972F4 /* KLineOptionBarLandscape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLineOptionBarLandscape.swift; sourceTree = "<group>"; };
+		5281A0F0215271D500D972F4 /* KLineOptionBarPortrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLineOptionBarPortrait.swift; sourceTree = "<group>"; };
 		52C5DD672146092100E7644D /* KLine-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KLine-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C5DD6A2146092100E7644D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52C5DD6C2146092100E7644D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,9 +121,7 @@
 		52DA58C12150AF0C00CDDA80 /* KLineOptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLineOptionButton.swift; sourceTree = "<group>"; };
 		52DA58C22150AF0C00CDDA80 /* UIDevice+Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Orientation.swift"; sourceTree = "<group>"; };
 		52DA58C32150AF0C00CDDA80 /* KLineTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLineTools.swift; sourceTree = "<group>"; };
-		52DA58C42150AF0C00CDDA80 /* OptionBarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		52DA58C52150AF0C00CDDA80 /* KLinePeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLinePeriod.swift; sourceTree = "<group>"; };
-		52DA58C62150AF0C00CDDA80 /* KLineOptionBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KLineOptionBar.swift; sourceTree = "<group>"; };
 		52DA58CF2150B5E500CDDA80 /* close_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_btn@2x.png"; sourceTree = "<group>"; };
 		52DA58D02150B5E600CDDA80 /* favor_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favor_nor@2x.png"; sourceTree = "<group>"; };
 		52DA58D12150B5E600CDDA80 /* favor_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favor_sel@2x.png"; sourceTree = "<group>"; };
@@ -303,9 +303,9 @@
 				52DA58C12150AF0C00CDDA80 /* KLineOptionButton.swift */,
 				52DA58C22150AF0C00CDDA80 /* UIDevice+Orientation.swift */,
 				52DA58C32150AF0C00CDDA80 /* KLineTools.swift */,
-				52DA58C42150AF0C00CDDA80 /* OptionBarCollectionViewCell.swift */,
 				52DA58C52150AF0C00CDDA80 /* KLinePeriod.swift */,
-				52DA58C62150AF0C00CDDA80 /* KLineOptionBar.swift */,
+				5281A0EF215271D500D972F4 /* KLineOptionBarLandscape.swift */,
+				5281A0F0215271D500D972F4 /* KLineOptionBarPortrait.swift */,
 			);
 			path = optionBar;
 			sourceTree = "<group>";
@@ -502,10 +502,8 @@
 				52C5DDEE2146147B00E7644D /* String+extension.swift in Sources */,
 				52DA58CA2150AF0C00CDDA80 /* UIDevice+Orientation.swift in Sources */,
 				52E5236321461A9C004C1CB3 /* CHChartAlgorithm.swift in Sources */,
-				52DA58CC2150AF0C00CDDA80 /* OptionBarCollectionViewCell.swift in Sources */,
 				52C5DDF62146147B00E7644D /* SelectionPopView.swift in Sources */,
 				52DA58C82150AF0C00CDDA80 /* KLineRightIndicatorView.swift in Sources */,
-				52DA58CE2150AF0C00CDDA80 /* KLineOptionBar.swift in Sources */,
 				52E5235921461A9C004C1CB3 /* CHAxisModel.swift in Sources */,
 				52C5DDF22146147B00E7644D /* DemoSelectViewController.swift in Sources */,
 				52C5DDEB2146147B00E7644D /* Double+exension.swift in Sources */,
@@ -540,7 +538,9 @@
 				52C5DDFB2146147B00E7644D /* SeriesSettingCell.swift in Sources */,
 				52C5DD6B2146092100E7644D /* AppDelegate.swift in Sources */,
 				52C5DDE32146147B00E7644D /* CustomStyleViewController.swift in Sources */,
+				5281A0F1215271D500D972F4 /* KLineOptionBarLandscape.swift in Sources */,
 				94418504214F401F0004EA54 /* Tools.swift in Sources */,
+				5281A0F2215271D500D972F4 /* KLineOptionBarPortrait.swift in Sources */,
 				52E5235A21461A9C004C1CB3 /* CHSeries.swift in Sources */,
 				52C5DDE52146147B00E7644D /* ChartDemoViewController.swift in Sources */,
 			);
@@ -704,7 +704,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KLine-Swift",
@@ -717,6 +718,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cn.kline.KLine-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KLine-Swift/KLine-Swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -730,7 +732,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = X6DDKY7VC2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KLine-Swift",
@@ -743,6 +747,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cn.kline.KLine-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "21e89ebb-fa9f-40a0-bc97-ae7d4d65ebfa";
+				PROVISIONING_PROFILE_SPECIFIER = "common-adhoc";
 				SWIFT_OBJC_BRIDGING_HEADER = "KLine-Swift/KLine-Swift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

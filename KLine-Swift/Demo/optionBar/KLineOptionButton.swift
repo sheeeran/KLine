@@ -9,6 +9,15 @@
 import UIKit
 
 class KLineOptionButton: UIButton {
+    enum TypeEnum {
+        case timeline       //分时
+        case period         //时间
+        case morePeriod           //更多
+        case moreIndicator  //更多指标
+        case prompt         //占位的(不可点击)
+        case indicator      //指标
+    }
+    
     let selectedColor = UIColor(red: 253.0/255.0, green: 195.0/255.0, blue: 14.0/255.0, alpha: 1)
     lazy var line: UIView = {
         let v = UIView()
@@ -16,24 +25,27 @@ class KLineOptionButton: UIButton {
         v.isHidden = true
         return v
     }()
-    var hideLine: Bool {
-        return false
+    
+    init() {
+        super.init(frame: .zero)
+        self.setTitleColor(.white, for: .normal)
+        self.setTitleColor(selectedColor, for: .selected)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        
+        addTarget(self, action: #selector(optionClick(sender:)), for: .touchUpInside)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override var isSelected: Bool {
         didSet {
-            if !hideLine {
-                line.isHidden = !isSelected
-            }
+            line.isHidden = !isSelected
         }
     }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.setTitleColor(selectedColor, for: .selected)
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        
+
+    func addLine() {
         addSubview(line)
         line.snp.makeConstraints { (make) in
             make.bottom.centerX.equalToSuperview()
@@ -42,19 +54,18 @@ class KLineOptionButton: UIButton {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    @objc func optionClick(sender: KLineOptionButton) {
+        NotificationCenter.default.post(name: Notification.Name.init("OptionButtonClick"), object: sender, userInfo: nil)
     }
-    
 }
 
 class PeriodButton: KLineOptionButton {
-    var model: KLinePeriod?
-    
+    var period: KLinePeriod
     init(_ type: KLinePeriod.PeriodType) {
-        super.init(frame: .zero)
-        self.model = KLinePeriod(type: type)
-        self.setTitle(model?.title ?? "", for: .normal)
+        self.period = KLinePeriod(type: type)
+        super.init()
+        self.setTitle(period.title, for: .normal)
+        addLine()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,12 +74,15 @@ class PeriodButton: KLineOptionButton {
 }
 
 class IndicatorButton: KLineOptionButton {
-    var value: String?
+    var value: String = ""
     
-    init(title: String, value: String) {
-        super.init(frame: .zero)
+    init(title: String, value: String, hideLine: Bool = false) {
+        super.init()
         self.setTitle(title, for: .normal)
         self.value = value
+        if !hideLine {
+            addLine()
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -76,20 +90,10 @@ class IndicatorButton: KLineOptionButton {
     }
 }
 
-class KLineRightIndicatorButton: IndicatorButton {
-    override var hideLine: Bool {
-        return true
-    }
-}
-
-class FlexButton: UIButton {
-    let selectedColor = UIColor(red: 253.0/255.0, green: 195.0/255.0, blue: 14.0/255.0, alpha: 1)
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        self.setTitleColor(selectedColor, for: .selected)
+class FlexButton: KLineOptionButton {
+    override init() {
+        super.init()
+        addLine()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -111,10 +115,50 @@ class FlexButton: UIButton {
         }
         context?.fillPath()
     }
+}
+
+class MoreButton: FlexButton {
+    override init() {
+        super.init()
+        self.setTitle("更多", for: .normal)
+    }
     
-    override var isSelected: Bool {
-        didSet {
-            setNeedsDisplay()
-        }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class MoreIndicatorButton: FlexButton {
+    override init() {
+        super.init()
+        self.setTitle("指标", for: .normal)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class TimeLineButton: KLineOptionButton {
+    override init() {
+        super.init()
+        self.setTitle("分时", for: .normal)
+        addLine()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class PromptButton: KLineOptionButton {
+    init(title: String) {
+        super.init()
+        self.isUserInteractionEnabled = false
+        self.setTitle(title, for: .normal)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
