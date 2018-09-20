@@ -36,7 +36,13 @@ class ChartCustomViewController: UIViewController {
     /// 已选周期
     var timeIndex: Int = 0
     /// 已选主图线段
-    var selectedMasterLine: Int = 0
+    var selectedMasterLine: Int = 0 {
+        didSet {
+            if oldValue != selectedMasterLine {
+                updateUserStyle()
+            }
+        }
+    }
     /// 已选主图指标
     var selectedMasterIndex: Int = 0
     /// 已选副图指标1
@@ -448,6 +454,12 @@ extension ChartCustomViewController {
         //重新渲染
         self.chartView.reloadData(resetData: false)
     }
+    
+    /// 更新指标算法和样式风格
+    func updateUserStyle() {
+        self.chartView.resetStyle(style: self.loadUserStyle())
+        self.handleChartIndexChanged()
+    }
 }
 
 // MARK: - 实现K线图表的委托方法
@@ -679,11 +691,10 @@ extension ChartCustomViewController {
         
         /// 时分线
         let timelineSeries = CHSeries.getTimelinePrice(
-            color: UIColor.ch_hex(0xAE475C),
+            color: UIColor(white: 1, alpha: 0.4),
             section: priceSection,
-            showGuide: true,
-            ultimateValueStyle: .circle(UIColor.ch_hex(0xAE475C), true),
-            lineWidth: 2)
+            showGuide: false,
+            lineWidth: 1)
         
         timelineSeries.hidden = true
         
@@ -706,7 +717,7 @@ extension ChartCustomViewController {
         
         for series in seriesParams {
             
-            if series.hidden {
+            if series.hidden || self.selectedMasterLine == 1 {
                 continue
             }
             

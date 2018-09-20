@@ -75,6 +75,7 @@ extension CHSeries {
         timeline.showMaxVal = showGuide
         timeline.showMinVal = showGuide
         timeline.lineWidth = lineWidth
+        timeline.shouldFill = true
         series.chartModels = [timeline]
         return series
     }

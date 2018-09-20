@@ -76,6 +76,7 @@ open class CHChartModel {
     open var ultimateValueStyle: CHUltimateValueStyle = .none       // 最大最小值显示样式
     open var lineWidth: CGFloat = 0.6                                     //线段宽度
     open var plotPaddingExt: CGFloat =  0.165                     //点与点之间间断所占点宽的比例
+    open var shouldFill = false
     
     weak var section: CHSection!
     
@@ -132,7 +133,7 @@ open class CHLineModel: CHChartModel {
         
         let modelLayer = CAShapeLayer()
         modelLayer.strokeColor = self.upStyle.color.cgColor
-        modelLayer.fillColor = UIColor.clear.cgColor
+        modelLayer.fillColor = self.shouldFill ? modelLayer.strokeColor : UIColor.clear.cgColor
         modelLayer.lineWidth = self.lineWidth
         modelLayer.lineCap = kCALineCapRound
         modelLayer.lineJoin = kCALineJoinBevel
@@ -147,12 +148,18 @@ open class CHLineModel: CHChartModel {
         var maxPoint: CGPoint?          //最大值所在坐标
         var minValue: CGFloat = CGFloat.greatestFiniteMagnitude       //最小值的项
         var minPoint: CGPoint?          //最小值所在坐标
+        var startPoint: CGPoint?
+        var endPoint: CGPoint?
         
         var isStartDraw = false
-        
+        if shouldFill {
+            print("startIndex:\(startIndex)", "endIndex:\(endIndex)")
+        }
         //循环起始到终结
         for i in stride(from: startIndex, to: endIndex, by: 1) {
-            
+            if shouldFill {
+                print("currentIndex:\(i)")
+            }
             //开始的点
             guard let value = self[i].value else {
                 continue //无法计算的值不绘画
@@ -167,6 +174,12 @@ open class CHLineModel: CHChartModel {
             let iys = self.section.getLocalY(value)
             //            let iye = self.section.getLocalY(valueNext!)
             let point = CGPoint(x: ix + plotWidth / 2, y: iys)
+            if i == startIndex {
+                startPoint = point
+            }
+            if i == endIndex - 1 {
+                endPoint = point
+            }
             //第一个点移动路径起始
             if !isStartDraw {
                 linePath.move(to: point)
@@ -187,7 +200,13 @@ open class CHLineModel: CHChartModel {
                 minPoint = point
             }
         }
-        
+        if shouldFill, let startP = startPoint, let endP = endPoint {
+            linePath.move(to: endP)
+            linePath.addLine(to: CGPoint(x: endP.x, y: 0))
+            linePath.addLine(to: CGPoint.zero)
+            linePath.addLine(to: startP)
+            linePath.fill()
+        }
         modelLayer.path = linePath.cgPath
         
         serieLayer.addSublayer(modelLayer)
