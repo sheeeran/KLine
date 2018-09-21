@@ -10,6 +10,7 @@ import UIKit
 
 extension UIDevice {
     static var isPortrait: Bool {
-        return UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
+        return KLineTools.isPortrait
+//        return UIDeviceOrientationIsPortrait(UIDevice.current.orientation)
     }
 }

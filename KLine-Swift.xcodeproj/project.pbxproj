@@ -64,6 +64,7 @@
 		52E5236221461A9C004C1CB3 /* CHDynamicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5235521461A9C004C1CB3 /* CHDynamicItem.swift */; };
 		52E5236321461A9C004C1CB3 /* CHChartAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5235621461A9C004C1CB3 /* CHChartAlgorithm.swift */; };
 		94418504214F401F0004EA54 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94418503214F401F0004EA54 /* Tools.swift */; };
+		94DD5EF62154E4F3005D8A7C /* full_screen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94DD5EF52154E4F3005D8A7C /* full_screen@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		52E5235521461A9C004C1CB3 /* CHDynamicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHDynamicItem.swift; sourceTree = "<group>"; };
 		52E5235621461A9C004C1CB3 /* CHChartAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHChartAlgorithm.swift; sourceTree = "<group>"; };
 		94418503214F401F0004EA54 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		94DD5EF52154E4F3005D8A7C /* full_screen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "full_screen@2x.png"; sourceTree = "<group>"; };
 		A4EEB6D3FB7E789CA2556C5E /* Pods-KLine-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLine-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-KLine-Swift/Pods-KLine-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		D514DC2941BD913BFC052CF8 /* Pods_KLine_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KLine_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -296,6 +298,7 @@
 		52DA58BE2150AF0C00CDDA80 /* optionBar */ = {
 			isa = PBXGroup;
 			children = (
+				94DD5EF52154E4F3005D8A7C /* full_screen@2x.png */,
 				52DA58CF2150B5E500CDDA80 /* close_btn@2x.png */,
 				52DA58D02150B5E600CDDA80 /* favor_nor@2x.png */,
 				52DA58D12150B5E600CDDA80 /* favor_sel@2x.png */,
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E5235721461A9C004C1CB3 /* Info.plist in Resources */,
+				94DD5EF62154E4F3005D8A7C /* full_screen@2x.png in Resources */,
 				52C5DD752146092200E7644D /* LaunchScreen.storyboard in Resources */,
 				52DA58D42150B5E600CDDA80 /* favor_sel@2x.png in Resources */,
 				52C5DD722146092200E7644D /* Assets.xcassets in Resources */,
@@ -734,7 +738,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = X6DDKY7VC2;
+				DEVELOPMENT_TEAM = WG4A3976U6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KLine-Swift",
@@ -747,8 +751,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cn.kline.KLine-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "21e89ebb-fa9f-40a0-bc97-ae7d4d65ebfa";
-				PROVISIONING_PROFILE_SPECIFIER = "common-adhoc";
+				PROVISIONING_PROFILE = "bb2e7e4d-4bb4-4052-b533-f4d3c95ad3ff";
+				PROVISIONING_PROFILE_SPECIFIER = "adhoc-yique";
 				SWIFT_OBJC_BRIDGING_HEADER = "KLine-Swift/KLine-Swift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

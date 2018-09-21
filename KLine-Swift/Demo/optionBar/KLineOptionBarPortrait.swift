@@ -206,7 +206,6 @@ extension KLineOptionBarPortrait {
             optionDelegate?.selectPeriod(sender.period.value)
         }
         
-        self.state = .normal
         timeLineBtn.isSelected = false
         periodBtnMap.forEach { (_, button) in
             if sender.period.value == button.period.value {
@@ -218,7 +217,6 @@ extension KLineOptionBarPortrait {
     }
 
     @objc func clickAssistIndicator(sender: IndicatorButton) {
-        self.state = .normal
         assistantIndicators.forEach { (button) in
             if button is IndicatorButton, sender.value == (button as! IndicatorButton).value {
                 button.isSelected = true

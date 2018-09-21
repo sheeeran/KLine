@@ -9,6 +9,7 @@
 import UIKit
 
 class KLineTools: NSObject {
+    static var isPortrait = true
     static let landscapeNavBarHeight: CGFloat = 50.0
     static let landscapeOptionBarHeight: CGFloat = 40.0
     static var rightIndicatorViewHeight: CGFloat {

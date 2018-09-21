@@ -133,7 +133,7 @@ open class CHLineModel: CHChartModel {
         
         let modelLayer = CAShapeLayer()
         modelLayer.strokeColor = self.upStyle.color.cgColor
-        modelLayer.fillColor = self.shouldFill ? modelLayer.strokeColor : UIColor.clear.cgColor
+        modelLayer.fillColor = self.shouldFill ? UIColor(red: 28.0/255.0, green: 30.0/255.0, blue: 34.0/255.0, alpha: 1).cgColor : UIColor.clear.cgColor
         modelLayer.lineWidth = self.lineWidth
         modelLayer.lineCap = kCALineCapRound
         modelLayer.lineJoin = kCALineJoinBevel
@@ -152,14 +152,10 @@ open class CHLineModel: CHChartModel {
         var endPoint: CGPoint?
         
         var isStartDraw = false
-        if shouldFill {
-            print("startIndex:\(startIndex)", "endIndex:\(endIndex)")
-        }
+
         //循环起始到终结
         for i in stride(from: startIndex, to: endIndex, by: 1) {
-            if shouldFill {
-                print("currentIndex:\(i)")
-            }
+
             //开始的点
             guard let value = self[i].value else {
                 continue //无法计算的值不绘画

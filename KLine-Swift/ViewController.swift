@@ -25,6 +25,10 @@ class ViewController: UIViewController {
         btn.backgroundColor = .red
         view.addSubview(btn)
     }
+        
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
     
     @objc func push() {
         let vc = ChartCustomViewController()

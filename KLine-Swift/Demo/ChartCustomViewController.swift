@@ -14,7 +14,8 @@ class ChartCustomViewController: UIViewController {
         socket.close()
     }
     
-    let darkGray = UIColor(hexStr: "1c1e22")
+    let darkGray = UIColor(red: 29.0/255.0, green: 30.0/255.0, blue: 34.0/255.0, alpha: 1)
+    let lineViewBgColor = UIColor(red: 20.0/255.0, green: 22.0/255.0, blue: 24.0/255.0, alpha: 1)
     let backgroundColor = UIColor.black
     /// 不显示
     static let Hide: String = ""
@@ -83,7 +84,7 @@ class ChartCustomViewController: UIViewController {
     lazy var closeBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "close_btn"), for: .normal)
-        btn.addTarget(self, action: #selector(pop), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(forcePortrait), for: .touchUpInside)
         btn.isHidden = UIDevice.isPortrait
         return btn
     }()
@@ -194,7 +195,7 @@ class ChartCustomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.setupUI()
         
         self.timeIndex = 0
@@ -206,10 +207,30 @@ class ChartCustomViewController: UIViewController {
         self.handleChartIndexChanged()
         
         configSocket()
+    
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "full_screen")?.withRenderingMode(.alwaysOriginal), style: .done, target: self, action: #selector(forceLandscape))
     }
     
-    @objc func pop() {
-        self.navigationController?.popViewController(animated: true)
+    var superViewColor: UIColor?
+    override func viewDidAppear(_ animated: Bool) {
+        superViewColor = self.view.superview?.backgroundColor
+        self.view.superview?.backgroundColor = backgroundColor
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.view.superview?.backgroundColor = superViewColor
+    }
+    
+    @objc func forceLandscape() {
+        self.view.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+        KLineTools.isPortrait = false
+        self.rotate(CGSize(width: UIScreen.main.bounds.height, height: UIScreen.main.bounds.width))
+    }
+    
+    @objc func forcePortrait() {
+        self.view.transform = CGAffineTransform(rotationAngle: 0)
+        KLineTools.isPortrait = true
+        self.rotate(UIScreen.main.bounds.size)
     }
     
     func configSocket() {
@@ -297,6 +318,10 @@ extension ChartCustomViewController: WebSocketDelegate {
 //横竖屏切换
 extension ChartCustomViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        rotate(size)
+    }
+    
+    func rotate(_ size: CGSize) {
         topView.setupLabels()
         makeConstraints()
         
@@ -635,8 +660,8 @@ extension ChartCustomViewController {
         style.textColor = UIColor(hex: styleParam.textColor)
         style.selectedBGColor = UIColor(white: 0.4, alpha: 1)
         style.selectedTextColor = UIColor(hex: styleParam.selectedTextColor)
-        style.backgroundColor = darkGray
-        style.isInnerYAxis = styleParam.isInnerYAxis
+        style.backgroundColor = lineViewBgColor
+        style.isInnerYAxis = true
         
         if styleParam.showYAxisLabel == "Left" {
             style.showYAxisLabel = .left
@@ -691,7 +716,7 @@ extension ChartCustomViewController {
         
         /// 时分线
         let timelineSeries = CHSeries.getTimelinePrice(
-            color: UIColor(white: 1, alpha: 0.4),
+            color: UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1),
             section: priceSection,
             showGuide: false,
             lineWidth: 1)
@@ -717,8 +742,12 @@ extension ChartCustomViewController {
         
         for series in seriesParams {
             
-            if series.hidden || self.selectedMasterLine == 1 {
+            if series.hidden {
                 continue
+            }
+            
+            if self.selectedMasterLine == 1, series.seriesKey == CHSeriesKey.ma {
+                series.params.removeAll()
             }
             
             //添加指标算法
